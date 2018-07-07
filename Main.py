@@ -16,12 +16,14 @@ def extract_data(url_name,location_name,location_id,email_id,api_key):
   pagespeed_issue_object = interface.IdentifyingPageSpeedIssues(email_id,api_key)
   yslow_issue_object = interface.IdentifyingYslowIssues(email_id,api_key)
   my_test = gt.start_test(url_name,location_id)
-  api_data = my_test.fetch_results()
+  try:
+    api_data = my_test.fetch_results()
+  except:
+    print('Error in fetching API data')
   api_data['pagespeed_issues'] = pagespeed_issue_object.fetch_results(api_data['pagespeed_url'])
   api_data['yslow_issues'] = yslow_issue_object.fetch_results(api_data['yslow_url'])
   api_data['url'] = url_name
   api_data['location_name'] = location_name
-  print('Data is loading')
   inserting_data_into_xl(**api_data)
   
 def init_xl_file():
