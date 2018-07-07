@@ -14,4 +14,4 @@ Data which I extracted from the API call - 1.PageSpeed Score,2.Yslow Score,3.Ful
 3.Install Six Module(pip install six)
 How to Run:-
 I have already defined the input - a list of six websites.If you want to add new websites just insert into the list.
-Run The main.py and output will be a Sample.xls file which you can save later as per your choice. 
+Run The Main.py and output will be a Final_Output.xls file which you can save later as per your choice. 
